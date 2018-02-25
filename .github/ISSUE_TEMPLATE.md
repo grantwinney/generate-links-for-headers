@@ -1,4 +1,5 @@
-**What is your question / suggestion?**
+My question / suggestion is: 
 
-**If you're having a problem with a specific URL, what is it?**
+
+The URL (if applicable) pertaining to my problem is:
 
