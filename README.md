@@ -11,9 +11,9 @@ Here's an extension for Chrome, that scans the page and generates anchors for al
 * Hover over the header, and the anchor link will appear.
 * Click on the "chain" icon to copy the link to the clipboard.
 
-![](show-header-with-links.gif)
-
 **NOTE:** If there's no ID, then there's nothing to link *to,* and you won't see an anchor appear when hovering that header.
+
+![](show-header-with-links.gif)
 
 ## Questions? Issues?
 
