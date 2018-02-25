@@ -15,6 +15,8 @@ Here's an extension for Chrome, that scans the page and generates anchors for al
 
 **NOTE:** If there's no ID, then there's nothing to link *to,* and you won't see an anchor appear when hovering that header.
 
+## Questions? Issues?
+
 If you have any questions, comments, or issues, feel free to [create an issue](https://github.com/grantwinney/generate-links-for-headers-in-chrome/issues/new) and I'll check it out as my schedule permits.
 
 Enjoy!
