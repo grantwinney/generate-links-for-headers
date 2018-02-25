@@ -4,6 +4,8 @@ I frequently want to share a link with someone, but I want to link to a specific
 
 I figured I can do better than that.
 
+## Let's automatically create links for all headers
+
 Here's an extension for Chrome, that scans the page and generates anchors for all headers on the page, *assuming they have an ID assigned.* Just hover over the header, and the anchor will appear.
 
 ![](show-header-with-links.gif)
