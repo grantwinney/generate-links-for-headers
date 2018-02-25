@@ -1,15 +1,13 @@
 .glfh_headerContainer {
-    margin-left: -20px;
+    margin-left: -25px;
 }
 
 .glfh_linkContainer {
-    width: 20px;
+    width: 25px;
     display: inline-block;
     opacity: 0.0;
-    /* font-size: x-small; */
     vertical-align: middle;
-    transition: all 100ms ease-in-out;
-    /* text-align: right; */
+    transition: all 200ms ease-out;
 }
 
 .glfh_textContainer {
@@ -17,23 +15,10 @@
     vertical-align: middle;
 }
 
-/* .glfh_linkContainer:hover {
-    opacity: 1.0;
-} */
-
 .glfh_linkContainer > a:hover {
     text-decoration: none;
 }
 
-/* .glfh_headerContainer + .glfh_linkContainer {
-    opacity: 0.0;
-} */
-
 .glfh_headerContainer:hover > .glfh_linkContainer {
     opacity: 1.0;
 }
-
-/*
-.glfh_linkContainer > a:hover {
-    visibility: visible;
-} */
