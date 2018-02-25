@@ -1,0 +1,39 @@
+.glfh_headerContainer {
+    margin-left: -20px;
+}
+
+.glfh_linkContainer {
+    width: 20px;
+    display: inline-block;
+    opacity: 0.0;
+    /* font-size: x-small; */
+    vertical-align: middle;
+    transition: all 100ms ease-in-out;
+    /* text-align: right; */
+}
+
+.glfh_textContainer {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* .glfh_linkContainer:hover {
+    opacity: 1.0;
+} */
+
+.glfh_linkContainer > a:hover {
+    text-decoration: none;
+}
+
+/* .glfh_headerContainer + .glfh_linkContainer {
+    opacity: 0.0;
+} */
+
+.glfh_headerContainer:hover > .glfh_linkContainer {
+    opacity: 1.0;
+}
+
+/*
+.glfh_linkContainer > a:hover {
+    visibility: visible;
+} */
