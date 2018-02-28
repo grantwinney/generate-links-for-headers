@@ -22,3 +22,9 @@
 .glfh_headerContainer:hover > .glfh_linkContainer {
     opacity: 1.0;
 }
+
+#glfh_tooltip {
+    background: white;
+    border: 1px solid black;
+    transition: all 200ms ease-in-out;
+}

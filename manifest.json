@@ -5,9 +5,20 @@
 
     "name": "Generate Links for Headers",
     "description": "Automatically generates links for all headers on the page, to make it easier to share specific sections of the page.",
-    "version": "1.0",
+    "version": "1.0.1",
 
     "update_url": "http://clients2.google.com/service/update2/crx",
+
+    "permissions" : [
+        "notifications"
+    ],
+
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
 
     "content_scripts": [
         {
