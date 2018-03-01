@@ -27,7 +27,7 @@ script.textContent = copyFunc;
 (document.head||document.documentElement).appendChild(script);
 
 // Select all anchors with a valid ID value
-var selector = 'h1[id]:not([id=""]), h2[id]:not([id=""]), h3[id]:not([id=""]), h4[id]:not([id=""]), h5[id]:not([id=""]), h6[id]:not([id=""])';  // , a[name]:not([name=""])
+var selector = 'h1[id]:not([id=""]), h2[id]:not([id=""]), h3[id]:not([id=""]), h4[id]:not([id=""]), h5[id]:not([id=""]), h6[id]:not([id=""])';
 var anchors = document.querySelectorAll(selector);
 
 // The 'chain' SVG element
