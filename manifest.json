@@ -13,13 +13,6 @@
         "notifications"
     ],
 
-    "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "persistent": false
-    },
-
     "content_scripts": [
         {
             "css": [

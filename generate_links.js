@@ -1,47 +1,25 @@
-var copyFunc = function copyHeaderLinkToClipboard(event) {
-    var text= 'ahasdf';
+// Copies the link to the clipboard and displays a small colored box so you know something happened
+var copyFunc = function copyHeaderLinkToClipboard(event, text) {
     if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
         var textarea = document.createElement("textarea");
         textarea.textContent = text;
         document.body.appendChild(textarea);
         textarea.select();
-        event.target.style.border = "1px solid rgba(255,0,0,1)";
+        var svgElement = (event.target.tagName === "A") ? event.target.childNodes[0] : event.target;
         try {
-            var result = document.execCommand("copy");
-            
-            var tooltip = document.getElementById('glfh_tooltip');
-            tooltip.style.top = (event.pageY + 5) + 'px';
-            tooltip.style.left = (event.pageX + 5) + 'px';
-            tooltip.style.display = "block";
-
-            var timer = setInterval(function () {
-                var op = 1;  // initial opacity
-                if (op <= 0.1){
-                    clearInterval(timer);
-                }
-                tooltip.style.opacity = op;
-                tooltip.style.filter = 'alpha(opacity=' + op * 100 + ")";
-                op += op / 0.1;
-            }, 10);
-
-            return result;
+            document.execCommand("copy");
+            svgElement.style.border = "1px solid rgba(0,200,0,1)";
+            return true;
         } catch (ex) {
             console.warn("Copy to clipboard failed.", ex);
             return false;
         } finally {
+            setTimeout(function() { svgElement.style.border = "1px solid rgba(255,0,0,0)"; }, 750);
             document.body.removeChild(textarea);
         }
     }
+    return false;
 };
-
-// Inject a new element into the page
-var notice = document.createElement('div');
-notice.innerHTML = "COPIED!";
-notice.id = "glfh_tooltip";
-notice.style.display = "none";
-notice.style.position = "absolute";
-notice.style.setProperty("border-radius", "5px");
-document.body.appendChild(notice);
 
 // Inject the above function into the current page
 var script = document.createElement('script');
@@ -63,6 +41,6 @@ var baseUrl = location.protocol + '//' + location.host + location.pathname + loc
 // Iterate through the anchors, adding a link to the left of each one
 anchors.forEach(function(anchor) {
     var url = baseUrl + anchor.getAttribute("id");
-    var link = '<a onclick="copyHeaderLinkToClipboard(event)" href="#" title="Copy link to clipboard"><svg height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="' + chainsvg + '"></path></svg></a>';
+    var link = '<a onclick="copyHeaderLinkToClipboard(event, \'' + url + '\')" href="javascript:;" title="Copy link to clipboard"><svg height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="' + chainsvg + '"></path></svg></a>';
     anchor.innerHTML = '<div class="glfh_headerContainer"><div class="glfh_linkContainer">' + link + '</div><div class="glfh_textContainer">' + anchor.innerHTML + '</div></div>';
 });

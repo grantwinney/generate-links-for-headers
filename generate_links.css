@@ -1,7 +1,9 @@
+/* Encompasses the chain icon and header */
 .glfh_headerContainer {
     margin-left: -25px;
 }
 
+/* Handles the chain icon, fading transition */
 .glfh_linkContainer {
     width: 25px;
     display: inline-block;
@@ -10,21 +12,25 @@
     transition: all 200ms ease-out;
 }
 
+.glfh_linkContainer > a:hover {
+    text-decoration: none;
+}
+
+/* An invisible border around the chain icon so there's no jitter when a border is shown */
+.glfh_linkContainer svg {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 150ms ease-in;
+    fill: currentColor;
+}
+
+/* Handles the original header text */
 .glfh_textContainer {
     display: inline-block;
     vertical-align: middle;
 }
 
-.glfh_linkContainer > a:hover {
-    text-decoration: none;
-}
-
+/* Hovering anywhere over the header makes the chain icon visible */
 .glfh_headerContainer:hover > .glfh_linkContainer {
     opacity: 1.0;
-}
-
-#glfh_tooltip {
-    background: white;
-    border: 1px solid black;
-    transition: all 200ms ease-in-out;
 }
