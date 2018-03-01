@@ -6,7 +6,7 @@ I figured I can do better than that.
 
 ## Let's automatically create links for all headers
 
-Here's an extension for Chrome, that scans the page and generates anchors for all headers on the page, *assuming they have an ID assigned.*
+Here's an extension for Chrome *([get it here](https://chrome.google.com/webstore/detail/generate-links-for-header/dckfkngmahjdokkkmconmfjdmicjcmgf)),* that scans the page and generates anchors for all headers on the page, *assuming they have an ID assigned.*
 
 * Hover over the header, and the anchor link will appear.
 * Click on the "chain" icon to copy the link to the clipboard.
