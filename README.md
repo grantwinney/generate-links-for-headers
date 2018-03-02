@@ -20,3 +20,11 @@ Here's an extension for Chrome *([get it here](https://chrome.google.com/webstor
 If you have any questions, comments, or issues, feel free to [create an issue](https://github.com/grantwinney/generate-links-for-headers-in-chrome/issues/new) and I'll check it out as my schedule permits.
 
 Enjoy!
+
+---
+
+## History
+
+- 1.0 - Initial
+- 1.0.2 - Show border momentarily when clicking on icon, to indicate something has happened.
+- 1.0.4 - Float icon to left of header instead of making it an inline block element. Previously, when the header was very long it consumed the -20px margin I had left for the icon, and the icon moved above the header. This fixes both issues.

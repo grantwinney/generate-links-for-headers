@@ -42,5 +42,5 @@ var baseUrl = location.protocol + '//' + location.host + location.pathname + loc
 anchors.forEach(function(anchor) {
     var url = baseUrl + anchor.getAttribute("id");
     var link = '<a onclick="copyHeaderLinkToClipboard(event, \'' + url + '\')" href="javascript:;" title="Copy link to clipboard"><svg height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="' + chainsvg + '"></path></svg></a>';
-    anchor.innerHTML = '<div class="glfh_headerContainer"><div class="glfh_linkContainer">' + link + '</div><div class="glfh_textContainer">' + anchor.innerHTML + '</div></div>';
+    anchor.innerHTML = '<div class="glfh_headerContainer"><div class="glfh_linkContainer">' + link + '</div>' + anchor.innerHTML + '</div>';
 });
