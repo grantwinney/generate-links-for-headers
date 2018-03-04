@@ -5,7 +5,7 @@
 
     "name": "Generate Links for Headers",
     "description": "Automatically generates links for all headers on the page, to make it easier to share specific sections of the page.",
-    "version": "1.0.5",
+    "version": "1.0.6",
 
     "update_url": "http://clients2.google.com/service/update2/crx",
 
@@ -21,7 +21,8 @@
                 "<all_urls>"
             ],
             "exclude_matches": [
-                "*://*.w3.org/TR/*"
+                "*://*.w3.org/TR/*",
+                "*://*.startpage.com/*"
             ]
         }
     ],

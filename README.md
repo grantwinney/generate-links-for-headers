@@ -29,3 +29,4 @@ Enjoy!
 - 1.0.2 - Show border momentarily when clicking on icon, to indicate something has happened.
 - 1.0.4 - Float icon to left of header instead of making it an inline block element. Previously, when the header was very long it consumed the -20px margin I had left for the icon, and the icon moved above the header. This fixes both issues.
 - 1.0.5 - Exclude portion of W3C site that breaks, and doesn't really need this extension anyway (they provide similar behavior).
+- 1.0.6 - Some sites, like Wikipedia, nest elements with IDs _inside_ header elements. If a header element doesn't have an ID, try to grab the first element with ID inside it (if any) and use that. Also, omit Startpage.com which uses a header for every block of results.
