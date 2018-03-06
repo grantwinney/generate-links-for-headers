@@ -4,16 +4,26 @@ I frequently want to share a link with someone, but I want to link to a specific
 
 I figured I can do better than that.
 
-## Let's automatically create links for all headers
+## Create links for all headers automatically
 
 Here's an extension for Chrome *([get it here](https://chrome.google.com/webstore/detail/generate-links-for-header/dckfkngmahjdokkkmconmfjdmicjcmgf)),* that scans the page and generates anchors for all headers on the page, *assuming they have an ID assigned.*
 
 * Hover over the header, and the anchor link will appear.
 * Click on the "chain" icon to copy the link to the clipboard.
 
-**NOTE:** If there's no ID, then there's nothing to link *to,* and you won't see an anchor appear when hovering that header.
+### Headers with child elements
+
+If the header itself doesn't have an ID, it traverses all elements inside the header tags looking for the first element with an ID assigned, since [any element can be used as an anchor](https://www.w3.org/TR/html4/struct/links.html#h-12.2.3). If it finds one, it uses it as the anchor; if not, then there's nothing to link to and you won't see the icon appear for that header.
 
 ![](show-header-with-links.gif)
+
+### Excluded sites
+
+The following sites are intentionally excluded, either due to implementing similar behavior already, or because displaying the icon doesn't work due to existing site layout/styles.
+
+* w3.org/TR
+* startpage.com
+* github.com
 
 ## Questions? Issues?
 
