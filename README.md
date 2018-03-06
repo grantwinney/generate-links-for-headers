@@ -11,11 +11,11 @@ Here's an extension for Chrome *([get it here](https://chrome.google.com/webstor
 * Hover over the header, and the anchor link will appear.
 * Click on the "chain" icon to copy the link to the clipboard.
 
+![](show-header-with-links.gif)
+
 ### Headers with child elements
 
 If the header itself doesn't have an ID, it traverses all elements inside the header tags looking for the first element with an ID assigned, since [any element can be used as an anchor](https://www.w3.org/TR/html4/struct/links.html#h-12.2.3). If it finds one, it uses it as the anchor; if not, then there's nothing to link to and you won't see the icon appear for that header.
-
-![](show-header-with-links.gif)
 
 ### Excluded sites
 
