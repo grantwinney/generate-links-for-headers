@@ -24,8 +24,10 @@ var copyFunc = function copyHeaderLinkToClipboard(event, text) {
 // Loop recursively through the header and all its child elements, in search of an ID to link to
 // Return the ID if found; otherwise return undefined
 function getFirstId(element) {
-    if (element.hasAttribute("id") && element["id"] !== "") {
+    if (element.hasAttribute("id")) {
         return element.getAttribute("id");
+    } else if (element.hasAttribute("name")) {
+        return element.getAttribute("name");
     } else if (element.hasChildNodes()) {      
         for (var i = 0; i < element.children.length; i++) {
             var id = getFirstId(element.children[i]);
