@@ -9,6 +9,7 @@
     transition: all 200ms ease-out;
     position: absolute;
     left: -25px;
+    padding-right: 25px;
 }
 
 .glfh_linkContainer > a {
