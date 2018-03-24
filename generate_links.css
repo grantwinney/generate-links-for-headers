@@ -10,6 +10,7 @@
     position: absolute;
     left: -25px;
     padding-right: 25px;
+    z-index: 2147483647;
 }
 
 .glfh_linkContainer > a {
