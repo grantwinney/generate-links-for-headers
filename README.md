@@ -42,4 +42,5 @@ Enjoy!
 - 1.0.6 - Some sites, like Wikipedia, nest elements with IDs _inside_ header elements. If a header element doesn't have an ID, try to grab the first element with ID inside it (if any) and use that. Also, exclude Startpage.com which uses a header for every block of results.
 - 1.0.7 - Exclude github.com - it implements similar behavior.
 - 1.0.8 - Check for 'name' attribute in addition to 'id'.
-- 1.0.9 - Eliminate choppiness when hovering back and forth between header title and link
+- 1.0.9 - Eliminate choppiness when hovering back and forth between header title and link.
+- 1.1.0 - Specify max z-index to ensure link shows above any other element. The link is tiny and invisible most of the time, and it needs to appear above all other elements when it's visible to be of any use at all.
