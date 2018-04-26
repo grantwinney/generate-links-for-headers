@@ -27,8 +27,7 @@ The following sites are intentionally excluded, either due to implementing simil
 
 ## Questions? Issues?
 
-If you have any questions, comments, or issues, feel free to [create an issue](https://github.com/grantwinney/generate-links-for-headers-in-
-/issues/new) and I'll check it out as my schedule permits.
+If you have any questions, comments, or issues, feel free to [create an issue](https://github.com/grantwinney/generate-links-for-headers/issues/new) and I'll check it out as my schedule permits.
 
 Enjoy!
 
