@@ -1,4 +1,4 @@
-# Generate Links for Headers (a Chrome extension)
+# Generate Links for Headers
 
 I frequently want to share a link with someone, but I want to link to a specific section of the page. That means checking out the source code for the page, finding the header element or an anchor nearby, and (if it has an ID or Name assigned to it) appending it to the URL before sharing it.
 
@@ -6,7 +6,7 @@ I figured I can do better than that.
 
 ## Create links for all headers automatically
 
-Here's an extension for Chrome *([get it here](https://chrome.google.com/webstore/detail/generate-links-for-header/dckfkngmahjdokkkmconmfjdmicjcmgf)),* that scans the page and generates anchors for all headers on the page, *assuming they have an ID or Name assigned.*
+Available for [Chrome](https://chrome.google.com/webstore/detail/generate-links-for-header/dckfkngmahjdokkkmconmfjdmicjcmgf)), it scans the page and generates anchors for all headers on the page, *assuming they have an ID or Name assigned.*
 
 * Hover over the header, and the anchor link will appear.
 * Click on the "chain" icon to copy the link to the clipboard.
@@ -27,7 +27,8 @@ The following sites are intentionally excluded, either due to implementing simil
 
 ## Questions? Issues?
 
-If you have any questions, comments, or issues, feel free to [create an issue](https://github.com/grantwinney/generate-links-for-headers-in-chrome/issues/new) and I'll check it out as my schedule permits.
+If you have any questions, comments, or issues, feel free to [create an issue](https://github.com/grantwinney/generate-links-for-headers-in-
+/issues/new) and I'll check it out as my schedule permits.
 
 Enjoy!
 
