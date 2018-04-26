@@ -1,11 +1,11 @@
 {
     "manifest_version": 2,
     "author": "Grant Winney",
-    "homepage_url": "https://github.com/grantwinney/generate-links-for-headers-in-chrome",
+    "homepage_url": "https://github.com/grantwinney/generate-links-for-headers",
 
     "name": "Generate Links for Headers",
     "description": "Automatically generates links for all headers on the page, to make it easier to share specific sections of the page.",
-    "version": "1.1.0",
+    "version": "1.1.1",
 
     "update_url": "http://clients2.google.com/service/update2/crx",
 
