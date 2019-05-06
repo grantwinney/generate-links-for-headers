@@ -1,6 +1,7 @@
 /* Encompasses the icon and header */
 .glfh_headerContainer {
     position: relative;
+    display: inline;
 }
 
 /* Handles the icon's location and fading transition */
