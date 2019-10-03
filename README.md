@@ -48,3 +48,6 @@ Enjoy!
 - 1.0.8 - Check for 'name' attribute in addition to 'id'.
 - 1.0.9 - Eliminate choppiness when hovering back and forth between header title and link.
 - 1.1.0 - Specify max z-index to ensure link shows above any other element. The link is tiny and invisible most of the time, and it needs to appear above all other elements when it's visible to be of any use at all.
+- 1.1.1 - Modified the link in the manifest file.
+- 1.2.1 - Adjusted CSS due to a bug that caused the link element to be hidden.
+- 1.2.2 - Allow links to be generated on help.github.com; was previously disabled for all github.com subdomains.
