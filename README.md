@@ -22,6 +22,7 @@ If the header itself doesn't have an ID or Name, it traverses all elements insid
 The following sites are intentionally excluded, either due to implementing similar behavior already, or because displaying the icon doesn't work due to existing site layout/styles.
 
 * github.com
+* docs.microsoft.com
 
 ## Questions? Issues?
 
@@ -55,3 +56,4 @@ Enjoy!
 **2020**
 - 1.2.5 - Moved anchor image to appear on right side of headers; sometimes it wasn't visible on the left side.
 - 1.2.6 - Enable on all sites except GitHub.
+- 1.2.7 - Disable on docs.microsoft.com, which implements its own solution.
