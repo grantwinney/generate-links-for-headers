@@ -8,19 +8,14 @@
 .glfh_linkContainer {
     opacity: 0.0;
     transition: all 200ms ease-out;
-    position: absolute;
-    left: -25px;
-    padding-right: 25px;
-    z-index: 2147483647;
+    padding-left: 10px;
+    display: inline;
+    vertical-align: middle;
 }
 
 .glfh_linkContainer > a {
     text-decoration: none !important;
-    border: 0px;
-}
-
-.glfh_linkContainer > a:hover {
-    text-decoration: none !important;
+    border: 0px !important;
 }
 
 /* An invisible border around the icon so there's no jitter when a border is shown */
@@ -34,8 +29,4 @@
 /* Hovering anywhere over the header makes the icon visible */
 .glfh_headerContainer:hover > .glfh_linkContainer {
     opacity: 1.0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    overflow: visible !important;
 }

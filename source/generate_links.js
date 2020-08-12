@@ -70,14 +70,11 @@ if (headers.length > 0) {
 // Iterate through the headers, adding a link to the left of each one
 let counter = 0;
 headers.forEach(function(header) {
-    let id = getFirstId(header);
-    if (!id) {
-        id = getParentId(header);
-    }
+    let id = getFirstId(header) || getParentId(header);
     if (id) {
         let anchorUrl = `${location.protocol}//${location.host}${location.pathname}${location.search}#${id}`;
         let genlinkid = `genlink_${counter++}`;
-        header.innerHTML = `<div class="glfh_headerContainer"><div class="glfh_linkContainer"><a id="${genlinkid}" href="${anchorUrl}" title="Copy link to clipboard"><svg height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="${chainsvg}"></path></svg></a></div>${header.innerHTML}</div>`;
+        header.innerHTML = `<div class="glfh_headerContainer">${header.innerHTML}<div class="glfh_linkContainer"><a id="${genlinkid}" href="${anchorUrl}" title="Copy link to clipboard"><svg height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="${chainsvg}"></path></svg></a></div></div>`;
         document.getElementById(genlinkid)
             .addEventListener("click", function(evt) {
                 copyFunc(evt, anchorUrl)

@@ -53,3 +53,6 @@ Enjoy!
 **2019**
 - 1.2.1 - Adjusted CSS due to a bug that caused the link element to be hidden.
 - 1.2.2 - Allow links to be generated on help.github.com; was previously disabled for all github.com subdomains.
+
+**2020**
+- 1.2.5 - Moved anchor image to appear on right side of headers; sometimes it wasn't visible on the left side.
