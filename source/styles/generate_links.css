@@ -1,0 +1,25 @@
+.glfh_headerContainer {
+    display: inline;
+}
+
+/* Set the icon's location and fading transition */
+.glfh_linkContainer {
+    display: inline;
+    font-size: 75%;
+    opacity: 0.0;
+    padding-left: 10px;
+    transition: all 200ms ease-out;
+    vertical-align: middle;
+}
+
+/* Prevent the icon from showing underlining, etc */
+.glfh_linkContainer > a, .glfh_linkContainer > a:hover {
+    border: 0px !important;
+    color: inherit;
+    text-decoration: none !important;
+}
+
+/* Hovering over the header makes the icon visible */
+.glfh_headerContainer:hover > .glfh_linkContainer {
+    opacity: 1.0;
+}

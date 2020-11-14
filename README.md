@@ -57,3 +57,4 @@ Enjoy!
 - 1.2.5 - Moved anchor image to appear on right side of headers; sometimes it wasn't visible on the left side.
 - 1.2.6 - Enable on all sites except GitHub.
 - 1.2.7 - Disable on docs.microsoft.com, which implements its own solution.
+- 1.3.0 - Replaced custom svg with font awesome icon. Reworked css to fix a couple bugs.
