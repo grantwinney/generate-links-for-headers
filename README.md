@@ -58,3 +58,4 @@ Enjoy!
 - 1.2.6 - Enable on all sites except GitHub.
 - 1.2.7 - Disable on docs.microsoft.com, which implements its own solution.
 - 1.3.0 - Replaced custom svg with font awesome icon. Reworked css to fix a couple bugs.
+- 1.3.1 - Remove font awesome icon and just fix the original svg to work correctly.
