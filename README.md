@@ -36,13 +36,10 @@ Enjoy!
 
 ## History
 
-**FEB 2018**
+**2018**
 - 1.0 - Initial
 - 1.0.2 - Show border momentarily when clicking on icon, to indicate something has happened.
 - 1.0.4 - Float icon to left of header instead of making it an inline block element. Previously, when the header was very long it consumed the -20px margin I had left for the icon, and the icon moved above the header. This fixes both issues.
-
-**MAR 2018**
-
 - 1.0.5 - Exclude portion of W3C site that breaks, and doesn't really need this extension anyway (they provide similar behavior).
 - 1.0.6 - Some sites, like Wikipedia, nest elements with IDs _inside_ header elements. If a header element doesn't have an ID, try to grab the first element with ID inside it (if any) and use that. Also, exclude Startpage.com which uses a header for every block of results.
 - 1.0.7 - Exclude github.com - it implements similar behavior.
@@ -61,3 +58,6 @@ Enjoy!
 - 1.2.7 - Disable on docs.microsoft.com, which implements its own solution.
 - 1.3.0 - Replaced custom svg with font awesome icon. Reworked css to fix a couple bugs.
 - 1.3.1 - Remove font awesome icon and just fix the original svg to work correctly.
+
+**2021**
+- 1.3.4 - Remove use of InnerHTML. Replace deprecated command used to copy to clipboard with standard api call. Replace svg icon with a standard unicode character.

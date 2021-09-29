@@ -1,22 +1,5 @@
-// Copies the link to the clipboard and displays a small colored box so you know something happened
-let copyFunc = function copyHeaderLinkToClipboard(_event, text) {
-    if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
-        let textarea = document.createElement("textarea");
-        textarea.textContent = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-            document.execCommand("copy");
-        } catch (ex) {
-            console.warn(`Copy to clipboard failed for: ${text}`, ex);
-        } finally {
-            document.body.removeChild(textarea);
-        }
-    }
-};
-
-// Loop recursively through the header and all its child elements, in search of an ID to link to
-// Return the ID if found; otherwise return undefined
+// Loop recursively through the header and its child elements, in search of an ID to link to
+// Return the ID if found, otherwise undefined
 function getFirstId(element) {
     if (element.hasAttribute("id")) {
         return element.getAttribute("id");
@@ -29,14 +12,12 @@ function getFirstId(element) {
                 return id;
             }
         }
-        return undefined;
-    } else {
-        return undefined;
     }
+    return undefined;
 }
 
 // Check the element's immediate parent, in search of an appropriate ID to link to
-// Return the ID if found; otherwise return undefined
+// Return the ID if found, otherwise undefined
 function getParentId(element) {
     let pNode = element.parentNode;
     if (pNode !== undefined && (pNode.tagName === 'A' || pNode.tagName === 'DIV')) {
@@ -44,37 +25,40 @@ function getParentId(element) {
             return pNode.getAttribute("id");
         } else if (pNode.hasAttribute("name")) {
             return pNode.getAttribute("name");
-        } else {
-            return undefined;
         }
-    } else {
-        return undefined;
     }
+    return undefined;
 }
 
-// Select all anchors with a valid ID value
-let headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-
-// Inject the 'copy link' function into the current page, if there are any headers
-if (headers.length > 0) {
-    let script = document.createElement('script');
-    script.textContent = copyFunc;
-    (document.head || document.documentElement).appendChild(script);
-}
-
-const svgAnchorIcon = `<svg style="display: inline; width: 1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>`;
-
-// Iterate through the headers, adding a link to the left of each one
+// Iterate through the headers, adding a link to the left of each one where possible
 let counter = 0;
-headers.forEach(function(header) {
-    let id = getFirstId(header) || getParentId(header);
-    if (id) {
-        let anchorUrl = `${location.protocol}//${location.host}${location.pathname}${location.search}#${id}`;
-        let genlinkid = `genlink_${counter++}`;
-        header.innerHTML = `<div class="glfh_headerContainer">${header.innerHTML}<div class="glfh_linkContainer"><a id="${genlinkid}" href="${anchorUrl}" title="Copy link to clipboard">${svgAnchorIcon}</a></div></div>`;
-        document.getElementById(genlinkid)
-            .addEventListener("click", function(evt) {
-                copyFunc(evt, anchorUrl)
-            });
-    }
+document.querySelectorAll('h1, h2, h3, h4, h5, h6')
+        .forEach(function(header) {
+            let id = getFirstId(header) || getParentId(header);
+            if (id) {
+                let anchorUrl = `${location.protocol}//${location.host}${location.pathname}${location.search}#${id}`;
+                let genlinkid = `genlink_${counter++}`;      
+
+                let a = document.createElement('a');
+                a.id = genlinkid;
+                a.href = anchorUrl;
+                a.title = 'Copy link to clipboard';
+                a.textContent = String.fromCodePoint(128279);
+
+                let innerDiv = document.createElement('div');
+                innerDiv.className = 'glfh_linkContainer';
+                innerDiv.appendChild(a);
+
+                let outerDiv = document.createElement('div');
+                outerDiv.className = 'glfh_headerContainer';
+                outerDiv.textContent = header.textContent;
+                outerDiv.appendChild(innerDiv);
+
+                header.replaceChildren(outerDiv);
+
+                document.getElementById(genlinkid)
+                        .addEventListener("click", function() {
+                            navigator.clipboard.writeText(anchorUrl)
+                        });
+            }
 });
