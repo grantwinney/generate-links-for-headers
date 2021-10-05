@@ -20,6 +20,6 @@
 }
 
 /* Hovering over the header makes the icon visible */
-.glfh_headerContainer:hover > .glfh_linkContainer {
+.glfh_headerContainer:hover .glfh_linkContainer {
     opacity: 1.0;
 }

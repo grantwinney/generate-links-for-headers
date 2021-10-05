@@ -5,7 +5,7 @@
 
     "name": "Generate Links for Headers",
     "description": "Automatically generates links for all headers on the page, to make it easier to share specific sections of the page.",
-    "version": "1.3.5",
+    "version": "1.3.6",
 
     "content_scripts": [
         {
@@ -22,7 +22,8 @@
                 "*://github.com/*",
                 "*://*.youtube.com/*",
                 "*://docs.microsoft.com/*",
-                "*://fontawesome.com/*"
+                "*://fontawesome.com/*",
+                "*://amazon.com/*"
             ]
         }
     ],

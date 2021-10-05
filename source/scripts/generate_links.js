@@ -37,24 +37,27 @@ document.querySelectorAll('h1, h2, h3, h4, h5, h6')
             let id = getFirstId(header) || getParentId(header);
             if (id) {
                 let anchorUrl = `${location.protocol}//${location.host}${location.pathname}${location.search}#${id}`;
-                let genlinkid = `genlink_${counter++}`;      
+                let genlinkid = `genlink_${counter++}`;
+                let clonedHeaderNode = header.cloneNode(true);
 
-                let a = document.createElement('a');
-                a.id = genlinkid;
-                a.href = anchorUrl;
-                a.title = 'Copy link to clipboard';
-                a.textContent = String.fromCodePoint(128279);
+                let copyLink = document.createElement('a');
+                copyLink.id = genlinkid;
+                copyLink.href = anchorUrl;
+                copyLink.title = 'Copy link to clipboard';
+                copyLink.textContent = String.fromCodePoint(128279);
 
                 let innerDiv = document.createElement('div');
                 innerDiv.className = 'glfh_linkContainer';
-                innerDiv.appendChild(a);
+                innerDiv.appendChild(copyLink);
+
+                clonedHeaderNode.appendChild(innerDiv);
 
                 let outerDiv = document.createElement('div');
                 outerDiv.className = 'glfh_headerContainer';
-                outerDiv.textContent = header.textContent;
-                outerDiv.appendChild(innerDiv);
+                outerDiv.appendChild(clonedHeaderNode);
 
-                header.replaceChildren(outerDiv);
+                header.parentNode.insertBefore(outerDiv, header);
+                header.remove();
 
                 document.getElementById(genlinkid)
                         .addEventListener("click", function() {
