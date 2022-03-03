@@ -19,7 +19,10 @@
                 "<all_urls>"
             ],
             "exclude_matches": [
+                "*://reservations.cosi.org/*",
+                "*://fiscaloffice.summitoh.net/*",
                 "*://github.com/*",
+                "*://docs.microsoft.com/*",
                 "*://amazon.com/*"
             ]
         }

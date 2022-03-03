@@ -61,3 +61,6 @@ Enjoy!
 
 **2021**
 - 1.3.4 - Remove use of InnerHTML. Replace deprecated command used to copy to clipboard with standard api call. Replace svg icon with a standard unicode character.
+
+**2022**
+- 1.3.7 - Adjustments for sites that didn't play well with this addon.
